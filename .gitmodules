@@ -1,3 +1,6 @@
 [submodule "golden-ratio"]
     path = modules/vim/vim/bundle/golden-ratio
     url = git://github.com/roman/golden-ratio.git
+[submodule "python-syntax"]
+	path = modules/vim/vim/bundle/python-syntax
+	url = git://github.com/hdima/python-syntax.git

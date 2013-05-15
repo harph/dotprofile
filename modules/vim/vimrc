@@ -1,3 +1,5 @@
+set nocompatible
+
 " Initial Setup (Pathogen)
 filetype off
 call pathogen#infect()
@@ -7,6 +9,7 @@ set modelines=0
 
 " Look and Feel
 syntax on
+filetype indent plugin on
 set number
 set background=dark
 colorscheme harph
@@ -21,6 +24,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 set smartindent
+set smarttab
 set autoindent
 
 " Find/Search 
@@ -30,13 +34,14 @@ set showmatch
 
 
 " Errors Handling
-set visualbell
-set noerrorbells
+set visualbell  " don't beep
+set noerrorbells  " don't beep
 
 " Editor
 set wildignore=*.swp,*.bak,*.pyc,*/.git/*
 set wildignore+=*/tmp/*,*.so,*.zip
-
+set nobackup
+set noswapfile
 
 if !exists("*TrimWhiteSpace")
     " Removes trailing spaces
