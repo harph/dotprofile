@@ -1,4 +1,7 @@
 dotprofile
 ==========
+Configuration files
 
-Dot/setup/config files
+## Installation
+
+    ./setup.sh
