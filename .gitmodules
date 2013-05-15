@@ -1,6 +1,3 @@
-[submodule "modules/vim/plugins/golden-ratio"]
-	path = modules/vim/plugins/golden-ratio
-	url = git://github.com/roman/golden-ratio.git
-[submodule "modules/vim/plugin/golden-ratio"]
-	path = modules/vim/plugin/golden-ratio
+[submodule "golden-ratio"]
+	path = /Users/harrington.joseph/.personal/dotfiles/modules/vim/vim/bundle
 	url = git://github.com/roman/golden-ratio.git
