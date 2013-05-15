@@ -14,4 +14,10 @@ vim_setup() {
     echo "vim setup [DONE]"
 }
 
+tmux_setup() {
+    ln -s "$MODULEDIR/tmux/.tmux.conf" $HOMEDIR
+    echo "tmux setup [DONE]"
+}
+
 vim_setup
+tmux_setup
