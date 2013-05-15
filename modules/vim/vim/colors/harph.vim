@@ -40,7 +40,7 @@ hi Title        guifg=#5fafd7   guibg=NONE      ctermfg=74     ctermbg=NONE     
 hi Cursor       guifg=bg        guibg=#87afd7   ctermfg=bg     ctermbg=110       gui=none      cterm=none
 hi CursorIM     guifg=bg        guibg=#87afd7   ctermfg=bg     ctermbg=110       gui=none      cterm=none
 hi CursorColumn guifg=NONE      guibg=#444444   ctermfg=NONE   ctermbg=238       gui=none      cterm=none
-hi CursorLine   guifg=#626262   guibg=#444444   ctermfg=241   ctermbg=238       gui=none      cterm=none
+hi CursorLine   guifg=NONE      guibg=#005f5f   ctermfg=NONE   ctermbg=23       gui=none      cterm=none
 hi Visual       guifg=NONE      guibg=#005f87   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
 hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
 hi IncSearch    guifg=bg        guibg=#57d7d7   ctermfg=bg     ctermbg=80        gui=none      cterm=none
