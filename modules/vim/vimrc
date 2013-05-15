@@ -1,3 +1,10 @@
+" Initial Setup (Pathogen)
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+set modelines=0
+
 " Look and Feel
 syntax on
 set number
