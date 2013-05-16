@@ -16,11 +16,35 @@ echo $BASEDIR
 echo $MODULEDIR
 echo $HOMEDIR
 
+mac_setup {
+    hasbrew=$(which brew)
+}
+
+
+ubuntu_setup {
+    
+}
+
+
+software_setup() {
+    osname=$(uname -a)
+    echo $osname
+    if [[ "$osname" == *Darwin* ]]
+    then
+        # It's a Mac
+        mac_setup
+    else if [[ "$osname" == *Ubuntu* ]]
+    then
+        # It's Ubuntu
+        ubuntu_setup
+    fi
+}
+
 
 vim_setup() {
     vimrc="$HOME/.vimrc"
     vimfolder="$HOMEDIR/.vim"
-    if [ ! -e "$vimrc" ]
+    if [[ ! -e "$vimrc" ]]
     then
         { ln -s "$MODULEDIR/vim/vimrc" $vimrc &&
             echo -e ".vimrc link $OK [OK] $NOCOLOR"; } ||
@@ -29,7 +53,7 @@ vim_setup() {
         echo -e "$WARNING There is an existing .vimrc. The link was not been created. $NOCOLOR"
     fi
 
-    if [ ! -e "$vimfolder" ]
+    if [[ ! -e "$vimfolder" ]]
     then
         { ln -s "$MODULEDIR/vim/vim" $vimfolder &&
             echo -e ".vim link $OK [OK] $NOCOLOR"; } ||
@@ -53,7 +77,7 @@ vim_setup() {
 
 tmux_setup() {
     tmuxconf="$HOME/.tmux.conf"
-    if [ ! -e "$tmuxconf" ]
+    if [[ ! -e "$tmuxconf" ]]
     then
         { ln -s "$MODULEDIR/tmux/tmux.conf" $tmuxconf &&
             echo -en ".tmux.conf link $OK [OK]"; } || 
@@ -66,5 +90,6 @@ tmux_setup() {
 }
 
 
-vim_setup
-tmux_setup
+software_setup
+#vim_setup
+#tmux_setup
