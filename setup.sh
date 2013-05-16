@@ -23,22 +23,30 @@ vim_setup() {
     if [ ! -e "$vimrc" ]
     then
         { ln -s "$MODULEDIR/vim/vimrc" $vimrc &&
-            echo -en ".vimrc link $OK [OK]"; } || 
-            echo -en ".vimrc link $ERROR [FAILED]"
+            echo -e ".vimrc link $OK [OK] $NOCOLOR"; } ||
+        { echo -e ".vimrc link $ERROR [FAILED] $NOCOLOR" && return 0; }
     else
-        echo -en "$WARNING There is an existing .vimrc. The link was not been created."
+        echo -e "$WARNING There is an existing .vimrc. The link was not been created. $NOCOLOR"
     fi
-    echo -e $NOCOLOR
 
     if [ ! -e "$vimfolder" ]
     then
         { ln -s "$MODULEDIR/vim/vim" $vimfolder &&
-            echo -en ".vim link $OK [OK]"; } || 
-            echo -en ".vim link $ERROR [FAILED]"
+            echo -e ".vim link $OK [OK] $NOCOLOR"; } ||
+        { echo -e ".vim link $ERROR [FAILED] $NOCOLOR";  return 0; }
     else
-         echo -en "$WARNING There is an existing .vim. The link was not been created."
+        echo -e "$WARNING There is an existing .vim. The link was not been created. $NOCOLOR"
     fi
-    echo -e $NOCOLOR
+
+    # Installing command-t plugin
+    echo -e "$INFO Installing Command-T $NOCOLOR"
+    { cd "$vimfolder/bundle/command-t/ruby/command-t" &&
+        ruby extconf.rb &&
+        make &&
+        echo -e "Command-T installation $OK [OK] $NOCOLOR"; } ||
+    { echo -e "$ERROR Command-T instalation failed. $NOCOLOR" && return 0; }
+
+
     echo -e "$INFO vim setup [DONE] $NOCOLOR"
 }
 
