@@ -1,9 +1,12 @@
-[submodule "golden-ratio"]
+[submodule "modules/vim/vim/bundle/golden-ratio"]
     path = modules/vim/vim/bundle/golden-ratio
     url = git://github.com/roman/golden-ratio.git
-[submodule "python-syntax"]
+[submodule "modules/vim/vim/bundle/python-syntax"]
 	path = modules/vim/vim/bundle/python-syntax
 	url = git://github.com/hdima/python-syntax.git
-[submodule "command-t"]
+[submodule "modules/vim/vim/bundle/command-t"]
 	path = modules/vim/vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "modules/vim/vim/bundle/ultisnips"]
+	path = modules/vim/vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
