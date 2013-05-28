@@ -37,16 +37,6 @@ vim_setup() {
     else
         echo -e "$WARNING There is an existing .vim. The link was not been created. $NOCOLOR"
     fi
-
-    # Installing command-t plugin
-    echo -e "$INFO Installing Command-T $NOCOLOR"
-    { cd "$vimfolder/bundle/command-t/ruby/command-t" &&
-        ruby extconf.rb &&
-        make &&
-        echo -e "Command-T installation $OK [OK] $NOCOLOR"; } ||
-    { echo -e "$ERROR Command-T instalation failed. $NOCOLOR" && return 0; }
-
-
     echo -e "$INFO vim setup [DONE] $NOCOLOR"
 }
 
