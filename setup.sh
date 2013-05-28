@@ -16,33 +16,6 @@ echo $BASEDIR
 echo $MODULEDIR
 echo $HOMEDIR
 
-mac_setup() {
-    #hasbrew=$(which brew)
-    echo "Mac setup"
-}
-
-
-ubuntu_setup() {
-    sudo apt-get install vim
-    sudo apt-get install tmux
-    sudo apt-get install git
-}
-
-
-software_setup() {
-    #osname=$(uname -a)
-    #echo $osname
-    #if [[ "$osname" == *Darwin* ]]
-    #then
-    #    # It's a Mac
-    #    mac_setup
-    #else if [[ "$osname" == *Ubuntu* ]]
-    #then
-    #    # It's Ubuntu
-    #    ubuntu_setup
-    #fi
-}
-
 
 vim_setup() {
     vimrc="$HOME/.vimrc"
@@ -93,6 +66,5 @@ tmux_setup() {
 }
 
 
-#software_setup
 vim_setup
 tmux_setup

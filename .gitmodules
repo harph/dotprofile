@@ -4,9 +4,6 @@
 [submodule "modules/vim/vim/bundle/python-syntax"]
 	path = modules/vim/vim/bundle/python-syntax
 	url = git://github.com/hdima/python-syntax.git
-[submodule "modules/vim/vim/bundle/command-t"]
-	path = modules/vim/vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "modules/vim/vim/bundle/ultisnips"]
 	path = modules/vim/vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
