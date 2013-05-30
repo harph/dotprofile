@@ -1,0 +1,6 @@
+[submodule "modules/vim/vim/bundle/golden-ratio"]
+	path = modules/vim/vim/bundle/golden-ratio
+	url = git://github.com/roman/golden-ratio.git
+[submodule "modules/vim/vim/bundle/ultisnips"]
+	path = modules/vim/vim/bundle/ultisnips
+	url = git://github.com/vim-scripts/UltiSnips.git
