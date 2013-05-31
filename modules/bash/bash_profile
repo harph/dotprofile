@@ -5,4 +5,4 @@ parse_git_branch() {
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # tmux. This fixes the tmux/vim theme problems
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=xterm tmux"
