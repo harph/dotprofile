@@ -51,5 +51,9 @@ if !exists("*TrimWhiteSpace")
     :endfunction
 endif
 
-map <F2> :call TrimWhiteSpace()<CR>
-map <F1> :tabnew<CR>
+
+" My keys
+map <F8> :call TrimWhiteSpace()<CR>
+map <F1> :tabprevious<CR>
+map <F2> :tabnext<CR>
+map <F3> :tabclose<CR>
