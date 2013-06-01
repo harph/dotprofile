@@ -4,9 +4,6 @@
 [submodule "modules/vim/vim/bundle/ultisnips"]
 	path = modules/vim/vim/bundle/ultisnips
 	url = git://github.com/vim-scripts/UltiSnips.git
-[submodule "modules/vim/vim/bundle/vim-autoclose"]
-	path = modules/vim/vim/bundle/vim-autoclose
-	url = https://github.com/andrewle/vim-autoclose.git
 [submodule "modules/vim/vim/bundle/vim-markdown"]
 	path = modules/vim/vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
