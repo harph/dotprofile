@@ -10,3 +10,6 @@
 [submodule "modules/vim/vim/bundle/vim-flake8"]
 	path = modules/vim/vim/bundle/vim-flake8
 	url = git://github.com/nvie/vim-flake8.git
+[submodule "modules/vim/vim/bundle/taglist"]
+	path = modules/vim/vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
