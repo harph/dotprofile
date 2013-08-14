@@ -16,3 +16,9 @@
 [submodule "modules/vim/vim/bundle/nerdcommenter"]
 	path = modules/vim/vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "modules/vim/vim/bundle/flymaker"]
+	path = modules/vim/vim/bundle/flymaker
+	url = git@github.com:vim-scripts/flymaker.git
+[submodule "modules/vim/vim/bundle/go-vim"]
+	path = modules/vim/vim/bundle/go-vim
+	url = https://github.com/uggedal/go-vim.git
