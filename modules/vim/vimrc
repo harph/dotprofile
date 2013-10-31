@@ -40,7 +40,8 @@ set visualbell  " don't beep
 set noerrorbells  " don't beep
 
 " Editor
-set wildignore=*.swp,*.bak,*.pyc,*/.git/*
+set clipboard=unnamed
+set wildignore=*.swp,*.bak,*.pyc,*.pyo,*/.git/*
 set wildignore+=*/tmp/*,*.so,*.zip
 set nobackup
 set noswapfile
