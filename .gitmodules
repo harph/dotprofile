@@ -1,24 +1,24 @@
 [submodule "modules/vim/vim/bundle/golden-ratio"]
-	path = modules/vim/vim/bundle/golden-ratio
-	url = git://github.com/roman/golden-ratio.git
+    path = modules/vim/vim/bundle/golden-ratio
+    url = git://github.com/roman/golden-ratio.git
 [submodule "modules/vim/vim/bundle/ultisnips"]
-	path = modules/vim/vim/bundle/ultisnips
-	url = git://github.com/vim-scripts/UltiSnips.git
+    path = modules/vim/vim/bundle/ultisnips
+    url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "modules/vim/vim/bundle/vim-markdown"]
-	path = modules/vim/vim/bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
+    path = modules/vim/vim/bundle/vim-markdown
+    url = git://github.com/tpope/vim-markdown.git
 [submodule "modules/vim/vim/bundle/vim-flake8"]
-	path = modules/vim/vim/bundle/vim-flake8
-	url = git://github.com/nvie/vim-flake8.git
+    path = modules/vim/vim/bundle/vim-flake8
+    url = git://github.com/nvie/vim-flake8.git
 [submodule "modules/vim/vim/bundle/taglist"]
-	path = modules/vim/vim/bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
+    path = modules/vim/vim/bundle/taglist
+    url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "modules/vim/vim/bundle/nerdcommenter"]
-	path = modules/vim/vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+    path = modules/vim/vim/bundle/nerdcommenter
+    url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "modules/vim/vim/bundle/flymaker"]
-	path = modules/vim/vim/bundle/flymaker
-	url = git@github.com:vim-scripts/flymaker.git
+    path = modules/vim/vim/bundle/flymaker
+    url = git@github.com:vim-scripts/flymaker.git
 [submodule "modules/vim/vim/bundle/go-vim"]
-	path = modules/vim/vim/bundle/go-vim
-	url = https://github.com/uggedal/go-vim.git
+    path = modules/vim/vim/bundle/go-vim
+    url = https://github.com/uggedal/go-vim.git

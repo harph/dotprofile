@@ -41,6 +41,8 @@ set noerrorbells  " don't beep
 
 " Editor
 set clipboard=unnamed
+set backspace=2
+set backspace=indent,eol,start
 set wildignore=*.swp,*.bak,*.pyc,*.pyo,*/.git/*
 set wildignore+=*/tmp/*,*.so,*.zip
 set nobackup
@@ -60,3 +62,9 @@ map <F8> :call TrimWhiteSpace()<CR>
 map <F1> :tabprevious<CR>
 map <F2> :tabnext<CR>
 map <F3> :tabclose<CR>
+
+" Airline plugin
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
