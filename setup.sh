@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path and directories
-BASEDIR=$(dirname $0)
+BASEDIR=$PWD
 MODULEDIR="$BASEDIR/modules"
 HOMEDIR=$(eval echo ~${SUDO_USER})
 
@@ -15,7 +15,6 @@ NOCOLOR="\e[0m"  # no color
 echo $BASEDIR
 echo $MODULEDIR
 echo $HOMEDIR
-
 
 vim_setup() {
     vimrc="$HOME/.vimrc"
@@ -56,5 +55,21 @@ tmux_setup() {
 }
 
 
+bash_profile_setup() {
+    bash_profile_conf="$HOME/.bash_profile"
+    if [[ ! -e "$bash_profile_conf" ]]
+    then
+        { ln -s "$MODULEDIR/bash/bash_profile" $bash_profile_conf &&
+            echo -en ".bash_profile link $OK [OK]"; } || 
+            echo -en ".bash_profile link $ERROR [FAILED]"
+    else
+        echo -en "$WARNING There is an existing .bash.profile. The link was not been created."
+    fi
+    echo -e $NOCOLOR
+    echo -e "$INFO bash_profile setup [DONE] $NOCOLOR"
+
+}
+
 vim_setup
 tmux_setup
+bash_profile_setup
