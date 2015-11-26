@@ -70,6 +70,7 @@ bash_profile_setup() {
 
 }
 
+git submodule update --init --recursive
 vim_setup
 tmux_setup
 bash_profile_setup
