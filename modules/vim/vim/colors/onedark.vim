@@ -103,7 +103,7 @@ call s:h("Number", { "fg": s:dark_yellow }) " a number constant: 234, 0xff
 call s:h("Boolean", { "fg": s:dark_yellow }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:dark_yellow }) " a floating point constant: 2.3e10
 call s:h("Identifier", { "fg": s:red }) " any variable name
-call s:h("Function", {}) " function name (also: methods for classes)
+call s:h("Function", { "fg": s:blue }) " function name (also: methods for classes)
 call s:h("Statement", { "fg": s:purple }) " any statement
 call s:h("Conditional", { "fg": s:purple }) " if, then, else, endif, switch, etc.
 call s:h("Repeat", { "fg": s:purple }) " for, do, while, etc.
@@ -129,7 +129,7 @@ call s:h("Debug", {}) " debugging statements
 call s:h("Underlined", {}) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:red, "bg": s:gutter_bg_grey }) " any erroneous construct
-call s:h("Todo", { "fg": s:purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:h("Todo", { "fg": s:red }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 " +----------------------------------------------------------------------+
 " | Highlighting Groups (descriptions and ordering from `:h hitest.vim`) |
