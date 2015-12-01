@@ -61,7 +61,7 @@ endfunction
 " +-----------------+
 
 let s:red = { "gui": "#E06C75", "cterm": "204", "cterm16": "1"} " Alternate cterm: 168
-"let s:dark_red = { "gui": "#e64040", "cterm": "196", "cterm16": "9"}
+let s:dark_red = { "gui": "#e64040", "cterm": "52", "cterm16": "9"}
 
 let s:green = { "gui": "#56E53A", "cterm": "47", "cterm16": "2"}
 let s:dark_green = { "gui": "#6dc35c", "cterm": "36", "cterm16": "10"}
@@ -70,7 +70,7 @@ let s:yellow = { "gui": "#E5C07B", "cterm": "180", "cterm16": "3"}
 let s:dark_yellow = { "gui": "#D19A66", "cterm": "173", "cterm16": "11"}
 
 let s:blue = { "gui": "#61AFEF", "cterm": "39", "cterm16": "4"} " Alternate cterm: 75
-let s:dark_blue = { "gui": "#6097dc", "cterm": "32", "cterm16": "12"}
+let s:dark_blue = { "gui": "#6097dc", "cterm": "18", "cterm16": "4"}
 
 let s:purple = { "gui": "#C678DD", "cterm": "170", "cterm16": "5"} " Alternate cterm: 176
 let s:dark_purple = { "gui": "#8d73de", "cterm": "55", "cterm16": "13"}
@@ -80,16 +80,17 @@ let s:dark_cyan = { "gui": "#53d3d2", "cterm": "110", "cterm16": "14"}
 
 let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
 
-let s:black = { "gui": "#282C34", "cterm": "235", "cterm16": "8" }
+let s:black = { "gui": "#282C34", "cterm": "233", "cterm16": "0" }
 let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": s:black.cterm16 } " Black out selected text in 16-color visual mode
 
 let s:comment_grey = { "gui": "#5C6670", "cterm": "59", "cterm16": "15" }
-let s:gutter_fg_grey = { "gui": "#636D83", "cterm": "238", "cterm16": "15" }
-let s:gutter_bg_grey = { "gui": "#2C313A", "cterm": "NONE", "cterm16": "NONE" }
-let s:cursor_grey =  { "gui": "#2C323B", "cterm": "236", "cterm16": "15" } " TODO: This cterm16 value doesn't work great here
+let s:gutter_fg_grey = { "gui": "#636D83", "cterm": "231", "cterm16": "13" }
+let s:gutter_fg_blue = { "gui": "#636D83", "cterm": "45", "cterm16": "13" }
+let s:gutter_bg_grey = { "gui": "#2C313A", "cterm": "236", "cterm16": "8" }
+let s:cursor_grey =  { "gui": "#2C323B", "cterm": "234", "cterm16": "15" } " TODO: This cterm16 value doesn't work great here
 let s:visual_grey = { "gui": "#3E4451", "cterm": "237", "cterm16": "15" }
 let s:special_grey = { "gui": "#383C45", "cterm": "238", "cterm16": "15" }
-let s:vertsplit = { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }
+let s:vertsplit = { "gui": "#181A1F", "cterm": "238", "cterm16": "11" }
 
 " +---------------------------------------------------------+
 " | Syntax Groups (descriptions and ordering from `:h w18`) |
@@ -135,7 +136,7 @@ call s:h("Todo", { "fg": s:red }) " anything that needs extra attention; mostly 
 " | Highlighting Groups (descriptions and ordering from `:h hitest.vim`) |
 " +----------------------------------------------------------------------+
 
-call s:h("ColorColumn", { "bg": s:cyan }) " used for the columns set with 'colorcolumn'
+call s:h("ColorColumn", { "bg": s:blue }) " used for the columns set with 'colorcolumn'
 call s:h("Conceal", {}) " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:h("Cursor", { "fg": s:black, "bg": s:blue }) " the character under the cursor
 call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
@@ -147,12 +148,12 @@ call s:h("DiffChange", { "fg": s:dark_yellow }) " diff mode: Changed line
 call s:h("DiffDelete", { "fg": s:red }) " diff mode: Deleted line
 call s:h("DiffText", { "fg": s:blue }) " diff mode: Changed text within a changed line
 call s:h("ErrorMsg", {}) " error messages on the command line
-call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
+call s:h("VertSplit", { "fg": s:vertsplit, "bg": s:vertsplit }) " the column separating vertically split windows
 call s:h("Folded", {}) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", {}) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:gutter_fg_grey, "bg": s:gutter_bg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+call s:h("LineNr", { "fg": s:gutter_fg_blue, "bg": s:gutter_bg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", {}) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")

@@ -12,7 +12,6 @@ set modelines=0
 syntax on
 filetype indent plugin on
 set number
-set background=dark
 colorscheme onedark
 set colorcolumn=80
 set cursorline
