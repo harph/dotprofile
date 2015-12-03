@@ -62,9 +62,3 @@ map <F8> :call TrimWhiteSpace()<CR>
 map <F1> :tabprevious<CR>
 map <F2> :tabnext<CR>
 map <F3> :tabclose<CR>
-
-" Airline plugin
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
