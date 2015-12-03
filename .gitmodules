@@ -1,9 +1,6 @@
 [submodule "modules/vim/vim/bundle/golden-ratio"]
     path = modules/vim/vim/bundle/golden-ratio
     url = git://github.com/roman/golden-ratio.git
-[submodule "modules/vim/vim/bundle/ultisnips"]
-    path = modules/vim/vim/bundle/ultisnips
-    url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "modules/vim/vim/bundle/vim-markdown"]
     path = modules/vim/vim/bundle/vim-markdown
     url = git://github.com/tpope/vim-markdown.git
@@ -13,9 +10,3 @@
 [submodule "modules/vim/vim/bundle/taglist"]
     path = modules/vim/vim/bundle/taglist
     url = git://github.com/vim-scripts/taglist.vim.git
-[submodule "modules/vim/vim/bundle/nerdcommenter"]
-    path = modules/vim/vim/bundle/nerdcommenter
-    url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "modules/vim/vim/bundle/flymaker"]
-    path = modules/vim/vim/bundle/flymaker
-    url = git://github.com/vim-scripts/flymaker.git

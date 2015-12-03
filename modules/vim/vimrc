@@ -12,7 +12,7 @@ set modelines=0
 syntax on
 filetype indent plugin on
 set number
-colorscheme onedark
+"colorscheme onedark
 set colorcolumn=80
 set cursorline
 set list
