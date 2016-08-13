@@ -25,7 +25,7 @@ vim_setup() {
             echo -e ".vimrc link $OK [OK] $NOCOLOR"; } ||
         { echo -e ".vimrc link $ERROR [FAILED] $NOCOLOR" && return 0; }
     else
-        echo -e "$WARNING There is an existing .vimrc. The link was not been created. $NOCOLOR"
+        echo -e "$WARNING There is an existing .vimrc. The link has not been created. $NOCOLOR"
     fi
 
     if [[ ! -e "$vimfolder" ]]
@@ -34,7 +34,7 @@ vim_setup() {
             echo -e ".vim link $OK [OK] $NOCOLOR"; } ||
         { echo -e ".vim link $ERROR [FAILED] $NOCOLOR";  return 0; }
     else
-        echo -e "$WARNING There is an existing .vim. The link was not been created. $NOCOLOR"
+        echo -e "$WARNING There is an existing .vim. The link has not been created. $NOCOLOR"
     fi
     echo -e "$INFO vim setup [DONE] $NOCOLOR"
 }
@@ -48,7 +48,7 @@ tmux_setup() {
             echo -en ".tmux.conf link $OK [OK]"; } || 
             echo -en ".tmux.conf link $ERROR [FAILED]"
     else
-        echo -en "$WARNING There is an existing .tmux.conf. The link was not been created."
+        echo -en "$WARNING There is an existing .tmux.conf. The link has not been created."
     fi
     echo -e $NOCOLOR
     echo -e "$INFO tmux setup [DONE] $NOCOLOR"
@@ -63,13 +63,30 @@ bash_profile_setup() {
             echo -en ".bash_profile link $OK [OK]"; } || 
             echo -en ".bash_profile link $ERROR [FAILED]"
     else
-        echo -en "$WARNING There is an existing .bash.profile. The link was not been created."
+        echo -en "$WARNING There is an existing .bash_profile. The link has not been created."
     fi
     echo -e $NOCOLOR
     echo -e "$INFO bash_profile setup [DONE] $NOCOLOR"
 
 }
 
+
+git_config_setup() {
+    git_conf="$HOME/.gitconfig"
+    if [[ ! -e "$git_conf" ]]
+    then
+        { ln -s "$MODULEDIR/git/gitconfig" $git_conf &&
+            echo -en ".gitconfig link $OK [OK]"; } || 
+            echo -en ".gitconfig link $ERROR [FAILED]"
+    else
+        echo -en "$WARNING There is an existing .gitconfig. The link has not been created."
+    fi
+    echo -e $NOCOLOR
+    echo -e "$INFO git_config setup [DONE] $NOCOLOR"
+}
+
+
 vim_setup
 tmux_setup
 bash_profile_setup
+git_config_setup
