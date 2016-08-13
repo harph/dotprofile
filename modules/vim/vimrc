@@ -32,9 +32,6 @@ set hlsearch
 set incsearch
 set showmatch
 
-" Fix paste from other windows
-set paste
-
 " Errors Handling
 set visualbell  " don't beep
 set noerrorbells  " don't beep

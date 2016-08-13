@@ -30,7 +30,7 @@ vim_setup() {
 
     if [[ ! -e "$vimfolder" ]]
     then
-        { ln -s "$MODULEDIR/vim/vim" $vimfolder &&
+        { /bin/bash $MODULEDIR/vim/setup.sh && ln -s "$MODULEDIR/vim/vim" $vimfolder &&
             echo -e ".vim link $OK [OK] $NOCOLOR"; } ||
         { echo -e ".vim link $ERROR [FAILED] $NOCOLOR";  return 0; }
     else
@@ -70,7 +70,6 @@ bash_profile_setup() {
 
 }
 
-git submodule update --init --recursive
 vim_setup
 tmux_setup
 bash_profile_setup
