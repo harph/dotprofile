@@ -1,3 +1,6 @@
+# Generated files
+modules/vim/vim/bundle/*
+
 # OS
 .DS_Store
 .netrwhist
