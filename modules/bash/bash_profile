@@ -13,9 +13,4 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# tmux. This fixes the tmux/vim theme problems
-alias tmux="TERM=xterm tmux"
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
