@@ -37,13 +37,23 @@ set visualbell  " don't beep
 set noerrorbells  " don't beep
 
 " Editor
-set clipboard=unnamed
+" Copy to clipboard setup
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+
+
 set backspace=2
 set backspace=indent,eol,start
 set wildignore=*.swp,*.bak,*.pyc,*.pyo,*/.git/*
 set wildignore+=*/tmp/*,*.so,*.zip
 set nobackup
 set noswapfile
+set mouse=nicr
 
 if !exists("*TrimWhiteSpace")
     " Removes trailing spaces
