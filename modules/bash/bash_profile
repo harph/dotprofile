@@ -1,12 +1,131 @@
 # Terminal colors
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LSCOLORS=GxFxCxDxBxegedabagacedC
 
-# Git branch in prompt.
-parse_git_branch() {
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# RESET
+COLOR_OFF="\[\033[0m\]"       # Text Reset
+
+# STYLE
+BOLD="\e[1m" 
+ITALIC="\e[3m"
+UNDERLINE="\e[4m"
+
+# REGULAR COLORS
+BLACK="\[\033[0;30m\]"        # Black
+RED="\[\033[0;31m\]"          # Red
+GREEN="\[\033[0;32m\]"        # Green
+YELLOW="\[\033[0;33m\]"       # Yellow
+BLUE="\[\033[0;34m\]"         # Blue
+PURPLE="\[\033[0;35m\]"       # Purple
+CYAN="\[\033[0;36m\]"         # Cyan
+WHITE="\[\033[0;37m\]"        # White
+
+# BACKGROUND
+ON_BLACK="\[\033[40m\]"       # Black
+ON_RED="\[\033[41m\]"         # Red
+ON_GREEN="\[\033[42m\]"       # Green
+ON_YELLOW="\[\033[43m\]"      # Yellow
+ON_BLUE="\[\033[44m\]"        # Blue
+ON_PURPLE="\[\033[45m\]"      # Purple
+ON_CYAN="\[\033[46m\]"        # Cyan
+ON_WHITE="\[\033[47m\]"       # White
+
+# HIGH INTENSTY
+IBLACK="\[\033[0;90m\]"       # Black
+IRED="\[\033[0;91m\]"         # Red
+IGREEN="\[\033[0;92m\]"       # Green
+IYELLOW="\[\033[0;93m\]"      # Yellow
+IBLUE="\[\033[0;94m\]"        # Blue
+IPURPLE="\[\033[0;95m\]"      # Purple
+ICYAN="\[\033[0;96m\]"        # Cyan
+IWHITE="\[\033[0;97m\]"       # White
+
+# BOLD HIGH INTENSTY
+BIBLACK="\[\033[1;90m\]"      # Black
+BIRED="\[\033[1;91m\]"        # Red
+BIGREEN="\[\033[1;92m\]"      # Green
+BIYELLOW="\[\033[1;93m\]"     # Yellow
+BIBLUE="\[\033[1;94m\]"       # Blue
+BIPURPLE="\[\033[1;95m\]"     # Purple
+BICYAN="\[\033[1;96m\]"       # Cyan
+BIWHITE="\[\033[1;97m\]"      # White
+
+# HIGH INTENSTY BACKGROUNDS
+ON_IBLACK="\[\033[0;100m\]"   # Black
+ON_IRED="\[\033[30;101m\]"     # Red
+ON_IGREEN="\[\033[30;102m\]"   # Green
+ON_IYELLOW="\[\033[0;103m\]"  # Yellow
+ON_IBLUE="\[\033[0;104m\]"    # Blue
+ON_IPURPLE="\[\033[10;95m\]"  # Purple
+ON_ICYAN="\[\033[0;106m\]"    # Cyan
+ON_IWHITE="\[\033[0;107m\]"   # White
+
+# Various variables you might want for your PS1 prompt instead
+Time12h="\T"
+Time12a="\@"
+PathShort="\w"
+PathFull="\W"
+NEW_LINE="\n"
+Jobs="\j"
+User="\u"
+Host="\h"
+ProcIndicator="\$"
+
+function virtualenv_info(){
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        venv="${VIRTUAL_ENV##*/}"
+    else
+        # In case you don't have one activated
+        venv=''
+    fi
+    [[ -n "$venv" ]] && echo "($venv)"
 }
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+
+git_branch() {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+    else
+        branch=''
+    fi
+    [[ -n $branch ]] && echo "(git:$branch)"
+}
+
+has_git_committed_changes() {
+    if git status | grep "nothing to commit" > /dev/null 2>&1; then
+        false
+    else
+        true
+    fi
+}
+
+
+# disable the default virtualenv prompt change
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+VENV="\$(virtualenv_info)"
+GIT_BRANCH="\$(git_branch)"
+
+export PS1=$NEW_LINE$IWHITE$Time12h$COLOR_OFF$CYAN'$( \
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then \
+  echo " '$User@$Host$COLOR_OFF'"; \
+else \
+  echo " '$IGREEN$User$COLOR_OFF'"; \
+fi)$( \
+if ! [ -z ${VENV} ]; then \
+  # Apply our virtualenv naming
+  echo " '$PURPLE${VENV}$COLOR_OFF'"; \
+fi)$(echo " '$IBLUE$PathShort$COLOR_OFF'";)$( \
+if git rev-parse --git-dir > /dev/null 2>&1; then \
+    if has_git_committed_changes; then \
+        echo -e " '$YELLOW${GIT_BRANCH}$IRED' \xE2\xAC\xA4 '$COLOR_OFF'"; \
+    else \
+        echo -e " '$YELLOW${GIT_BRANCH}$IGREEN' \xE2\xAC\xA4 '$COLOR_OFF'"; \
+    fi \
+fi)$(echo "'$NEW_LINE$ProcIndicator'") '
+
+
 
 # git bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -14,3 +133,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+
+export AKMS_KEYNAME=DATAOVEN_S3_KEY
+export USE_AKMS=1
+export USE_NEW_AWS=1
