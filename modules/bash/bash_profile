@@ -137,3 +137,4 @@ if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 export AKMS_KEYNAME=DATAOVEN_S3_KEY
 export USE_AKMS=1
 export USE_NEW_AWS=1
+export AWS_DEFAULT_REGION=us-east-1

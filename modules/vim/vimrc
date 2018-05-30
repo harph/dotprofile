@@ -14,7 +14,7 @@ filetype indent plugin on
 set number
 colorscheme onedark
 set colorcolumn=80
-set cursorline
+set nocursorline " this makes scrolling faster
 set list
 set ruler
 
@@ -38,14 +38,7 @@ set noerrorbells  " don't beep
 
 " Editor
 " Copy to clipboard setup
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
-
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
-
+set clipboard=unnamed
 
 set backspace=2
 set backspace=indent,eol,start
@@ -53,7 +46,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.pyo,*/.git/*
 set wildignore+=*/tmp/*,*.so,*.zip
 set nobackup
 set noswapfile
-set mouse=nicr
 
 if !exists("*TrimWhiteSpace")
     " Removes trailing spaces
