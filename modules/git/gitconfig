@@ -6,3 +6,8 @@
     username = harph
 [core]
     editor = /usr/bin/vim
+[alias]
+    graph = log --graph --abbrev-commit --date=short --pretty=format:'%C(yellow)%h%Creset %C(bold blue)(%an)%Creset%C(yellow)%d%Creset %s %Cgreen<%cr, %ar>%Creset'
+    # Some basic sync with upstream commands
+    sync = "!git pull upstream master && git push"
+    syncr = "!git pull upstream master --rebase && git push"
